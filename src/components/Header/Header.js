@@ -1,21 +1,16 @@
-import React from "react";
-import styled from "styled-components/macro";
+import React from 'react';
+import styled from 'styled-components/macro';
 
-import { COLORS, QUERIES, WEIGHTS } from "../../constants";
-import Logo from "../Logo";
-import SuperHeader from "../SuperHeader";
-import MobileMenu from "../MobileMenu";
-import Icon from "../Icon";
-import UnstyledButton from "../UnstyledButton";
-import VisuallyHidden from "../VisuallyHidden";
+import { COLORS, QUERIES, WEIGHTS } from '../../constants';
+import Logo from '../Logo';
+import SuperHeader from '../SuperHeader';
+import MobileMenu from '../MobileMenu';
+import Icon from '../Icon';
+import UnstyledButton from '../UnstyledButton';
+import VisuallyHidden from '../VisuallyHidden';
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
-
-  // For our mobile hamburger menu, we'll want to use a button
-  // with an onClick handler, something like this:
-  //
-  // <button onClick={() => setShowMobileMenu(true)}>
 
   return (
     <header>
@@ -41,7 +36,7 @@ const Header = () => {
             <Icon id="search" />
             <VisuallyHidden>Search</VisuallyHidden>
           </UnstyledButton>
-          <UnstyledButton>
+          <UnstyledButton onClick={() => setShowMobileMenu(true)}>
             <Icon id="menu" />
             <VisuallyHidden>Open menu</VisuallyHidden>
           </UnstyledButton>
@@ -67,7 +62,7 @@ const MainHeader = styled.div`
   @media ${QUERIES.tabletAndSmaller} {
     justify-content: space-between;
     align-items: center;
-    border-top: 4px solid ${COLORS.gray["900"]};
+    border-top: 4px solid ${COLORS.gray['900']};
   }
 
   @media ${QUERIES.phoneAndSmaller} {

@@ -27,9 +27,9 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
         <Footer>
-          <a href="/terms">Terms and Conditions</a>
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/contact">Contact Us</a>
+          <FooterNavLink href="/terms">Terms and Conditions</FooterNavLink>
+          <FooterNavLink href="/privacy">Privacy Policy</FooterNavLink>
+          <FooterNavLink href="/contact">Contact Us</FooterNavLink>
         </Footer>
       </Content>
     </Overlay>
@@ -89,6 +89,14 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  gap: 11px;
+`;
+
+const FooterNavLink = styled.a`
+  color: ${COLORS.gray['700']};
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: ${WEIGHTS.normal};
 `;
 
 export default MobileMenu;
